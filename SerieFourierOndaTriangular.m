@@ -17,7 +17,7 @@ T=2*pi;
 a0=pi/2;
 
 %Loop for different values of n
-for n=1:6%---------------------Edit this variable for different value of n
+for n=1:2%---------------------Edit this variable for different value of n
     an=an+((1-((-1)^n))/((n^2)*pi))*cos((2*n*pi*t)/T);
     bn=bn+(1/n)*sin((2*n*pi*t)/T);
     ft=(a0/2)+an+bn;
