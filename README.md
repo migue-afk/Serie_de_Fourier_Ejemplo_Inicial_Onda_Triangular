@@ -1,1 +1,1 @@
-# Fourier Seris Triangle Wave
+# Fourier Serie Triangle Wave
