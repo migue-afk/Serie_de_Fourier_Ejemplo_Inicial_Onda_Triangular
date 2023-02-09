@@ -1,10 +1,12 @@
 %Graph of the Fourier Serie of example classic of triangle wave
-
 %Graph of the function by parts
 function[]=mfuncion()
 t=-pi:0.01:pi;
 f=(t<=0).*(0)+(t>0).*(pi-t);
-plot(t,f);
+p=plot(t,f,'-*', 'MarkerIndices',1:30:length(f));
+p(1).Lin
+title('Fourier Serie')
+legend({'Function to parts',},'Location','northwestoutside')
 hold on
 
 %Input of variables a0, an, bn
@@ -15,64 +17,17 @@ T=2*pi;
 a0=pi/2;
 
 %Loop for different values of n
-for n=1:8
+for n=1:4%---------------------Edit this variable for different value of n
     an=an+((1-((-1)^n))/((n^2)*pi))*cos((2*n*pi*t)/T);
     bn=bn+(1/n)*sin((2*n*pi*t)/T);
-    ft=a0+an+bn;
-    plot(t,ft)
+    ft=(a0/2)+an+bn;
+    plot(t,ft,'DisplayName',sprintf('n = %d',n))
 end
+legend()
 hold off
+grid on
+
 end
-
-
-
-
-
-
-function[]=mfuncion()
-t=-pi:0.01:pi;
-f=(t<=0).*(0)+(t>0).*(pi-t);
-plot(t,f);
-hold on
-
-t=linspace(-pi,pi);
-% n1=1;
-an=0;
-bn=0;
-T=2*pi;
-a0=pi/2;
-
-for n=1:8
-    
-    an=an+((1-((-1)^n))/((n^2)*pi))*cos((2*n*pi*t)/T);
-    bn=bn+(1/n)*sin((2*n*pi*t)/T);
-%     ft=a0+an+bn;
-%     plot(t,ft)
-end
-
-% an=((1-((-1)^n))/((n^2)*pi))*cos(n*t);
-% bn=(1/n)*sin(n*t);
-   
-ft=(a0/2)+an+bn;
-plot(t,ft)
-
-hold off
-end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
